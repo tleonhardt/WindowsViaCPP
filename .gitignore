@@ -27,3 +27,10 @@
 *.exe
 *.out
 *.app
+
+# VS 2017 Files
+.vs
+
+# Debug and Release Directories
+Debug
+Release

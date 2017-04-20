@@ -42,6 +42,7 @@ Purpose: Common header file containing handy macros and definitions
 #pragma warning(push, 4)
 #include <CommCtrl.h>
 #include <process.h>       // For _beginthreadex
+#pragma warning(pop)
 
 
 ///////////// Verify that the proper header files are being used //////////////
@@ -61,9 +62,6 @@ Purpose: Common header file containing handy macros and definitions
 
 // unreferenced formal parameter
 #pragma warning(disable:4100)
-
-// Note: Creating precompiled header 
-#pragma warning(disable:4699)
 
 // function not inlined
 #pragma warning(disable:4710)

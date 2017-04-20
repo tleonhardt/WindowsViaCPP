@@ -57,18 +57,22 @@ void Dlg_OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify) {
       // Get the error code
       DWORD dwError = GetDlgItemInt(hwnd, IDC_ERRORCODE, NULL, FALSE);
 
-      HLOCAL hlocal = NULL;   // Buffer that gets the error message string
+	  PTSTR hlocal = NULL;   // Buffer that gets the error message string
 
       // Use the default system locale since we look for Windows messages.
       // Note: this MAKELANGID combination has 0 as value
       DWORD systemLocale = MAKELANGID(LANG_NEUTRAL, SUBLANG_NEUTRAL);
 
       // Get the error code's textual description
-      BOOL fOk = FormatMessage(
-         FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS |
-         FORMAT_MESSAGE_ALLOCATE_BUFFER, 
-         NULL, dwError, systemLocale, 
-         (PTSTR) &hlocal, 0, NULL);
+      DWORD fOk = FormatMessage(	// Formats a message string. The function requires a message definition as input.
+		  FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_ALLOCATE_BUFFER, // dwFlags [in] -The formatting options
+          NULL,				// lpSource [in, optional] - The location of the message definition
+		  dwError,			// dwMessageId [in] - The message identifier for the requested message
+		  systemLocale,		// dwLanguageId [in] - The language identifier for the requested message
+          (PTSTR)&hlocal,	// lpBuffer [out] - A pointer to a buffer that receives the null-terminated string that specifies the formatted message
+		  0,				// nSize [in] - If the FORMAT_MESSAGE_ALLOCATE_BUFFER flag is not set, this parameter specifies the size of the output buffer, in TCHARs.
+		  NULL				// Arguments [in, optional] - An array of values that are used as insert values in the formatted message. A %1 indicates the first value
+	  );	// If the function succeeds, the return value is the number of TCHARs stored in the output buffer, excluding the terminating null character.
 
       if (!fOk) {
          // Is it a network-related error?
