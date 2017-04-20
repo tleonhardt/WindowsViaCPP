@@ -20,7 +20,8 @@ const TCHAR g_szAppName[] = TEXT("Error Show");
 ///////////////////////////////////////////////////////////////////////////////
 
 
-BOOL Dlg_OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam) {
+BOOL Dlg_OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam) 
+{
 
    chSETDLGICONS(hwnd, IDI_ERRORSHOW);
 
@@ -36,9 +37,11 @@ BOOL Dlg_OnInitDialog(HWND hwnd, HWND hwndFocus, LPARAM lParam) {
 ///////////////////////////////////////////////////////////////////////////////
 
 
-void Dlg_OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify) {
+void Dlg_OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify) 
+{
 
-   switch (id) {
+   switch (id) 
+   {
 
    case IDCANCEL:
       EndDialog(hwnd, id);
@@ -57,7 +60,7 @@ void Dlg_OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify) {
       // Get the error code
       DWORD dwError = GetDlgItemInt(hwnd, IDC_ERRORCODE, NULL, FALSE);
 
-	  PTSTR hlocal = NULL;   // Buffer that gets the error message string
+	  HLOCAL hlocal = NULL;   // Buffer that gets the error message string
 
       // Use the default system locale since we look for Windows messages.
       // Note: this MAKELANGID combination has 0 as value
@@ -74,27 +77,28 @@ void Dlg_OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify) {
 		  NULL				// Arguments [in, optional] - An array of values that are used as insert values in the formatted message. A %1 indicates the first value
 	  );	// If the function succeeds, the return value is the number of TCHARs stored in the output buffer, excluding the terminating null character.
 
-      if (!fOk) {
+      if (!fOk) 
+	  {
          // Is it a network-related error?
-         HMODULE hDll = LoadLibraryEx(TEXT("netmsg.dll"), NULL, 
-            DONT_RESOLVE_DLL_REFERENCES);
+         HMODULE hDll = LoadLibraryEx(TEXT("netmsg.dll"), NULL, DONT_RESOLVE_DLL_REFERENCES);
 
-         if (hDll != NULL) {
+         if (hDll != NULL) 
+		 {
             fOk = FormatMessage(
-               FORMAT_MESSAGE_FROM_HMODULE | FORMAT_MESSAGE_IGNORE_INSERTS |
-               FORMAT_MESSAGE_ALLOCATE_BUFFER,
-               hDll, dwError, systemLocale,
-               (PTSTR) &hlocal, 0, NULL);
+               FORMAT_MESSAGE_FROM_HMODULE | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_ALLOCATE_BUFFER,
+               hDll, dwError, systemLocale, (PTSTR) &hlocal, 0, NULL);
             FreeLibrary(hDll);
          }
       }
 
-      if (fOk && (hlocal != NULL)) {
+      if (fOk && (hlocal != NULL)) 
+	  {
          SetDlgItemText(hwnd, IDC_ERRORTEXT, (PCTSTR) LocalLock(hlocal));
          LocalFree(hlocal);
-      } else {
-         SetDlgItemText(hwnd, IDC_ERRORTEXT, 
-            TEXT("No text found for this error number."));
+      } 
+	  else 
+	  {
+         SetDlgItemText(hwnd, IDC_ERRORTEXT, TEXT("No text found for this error number."));
       }
 
       break;
