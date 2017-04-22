@@ -12,10 +12,12 @@ Purpose: Common header file containing handy macros and definitions
 
 //////////////////////// Windows Version Build Option /////////////////////////
 
-
-// = 0x0600 for VISTA level from sdkddkver.h
-#define _WIN32_WINNT _WIN32_WINNT_LONGHORN 
-#define WINVER       _WIN32_WINNT_LONGHORN 
+// Version constants are from sdkddkver.h
+// = 0x0601 for Windows 7 (_WIN32_WINNT_WIN7)
+// = 0x0603 for Windows 8.1 (_WIN32_WINNT_WINBLUE)
+// = 0x0A00 for Windows 10 (_WIN32_WINNT_WIN10)
+#define _WIN32_WINNT _WIN32_WINNT_WIN10
+#define WINVER       _WIN32_WINNT_WIN10 
 
 
 //////////////////////////// Unicode Build Option /////////////////////////////
@@ -35,14 +37,12 @@ Purpose: Common header file containing handy macros and definitions
 
 
 ///////////////////////// Include Windows Definitions /////////////////////////
-
+// Compile Microsoft headers using warning level 3 to avoid unecessary warnings
 #pragma warning(push, 3)
 #include <Windows.h>
 #pragma warning(pop) 
-#pragma warning(push, 4)
 #include <CommCtrl.h>
 #include <process.h>       // For _beginthreadex
-#pragma warning(pop)
 
 
 ///////////// Verify that the proper header files are being used //////////////
@@ -138,7 +138,7 @@ inline TV chROUNDDOWN(TV Value, TM Multiple) {
 }
 
 
-// This inline function rounds a value down to the nearest multiple
+// This inline function rounds a value up to the nearest multiple
 template <class TV, class TM>
 inline TV chROUNDUP(TV Value, TM Multiple) {
    return(chROUNDDOWN(Value, Multiple) + 
