@@ -22,6 +22,7 @@
     <ProjectGuid>{4DDFA74F-A0E8-4735-91D1-04A86F413BB2}</ProjectGuid>
     <RootNamespace>My20DelayLoadLib</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">

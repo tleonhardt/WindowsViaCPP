@@ -22,6 +22,7 @@
     <ProjectGuid>{50E90666-4708-4ECC-912F-A4D2EDB52346}</ProjectGuid>
     <RootNamespace>My22InjLib</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
