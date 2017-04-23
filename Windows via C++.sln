@@ -88,6 +88,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "25-Spreadsheet", "25-Spread
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "26-CustomizedWER", "26-CustomizedWER\26-CustomizedWER.vcxproj", "{B12F0010-6C38-45D9-AA77-CAD796CF809E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloWorldGui", "HelloWorldGui\HelloWorldGui.vcxproj", "{6F79B753-77CD-4814-A0F7-19DBE8A36C6C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloWorldConsole", "HelloWorldConsole\HelloWorldConsole.vcxproj", "{BFF2D882-0F6E-41A2-8B2C-7AA79E4F92BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -400,6 +404,22 @@ Global
 		{B12F0010-6C38-45D9-AA77-CAD796CF809E}.Release|Win32.Build.0 = Release|Win32
 		{B12F0010-6C38-45D9-AA77-CAD796CF809E}.Release|x64.ActiveCfg = Release|x64
 		{B12F0010-6C38-45D9-AA77-CAD796CF809E}.Release|x64.Build.0 = Release|x64
+		{6F79B753-77CD-4814-A0F7-19DBE8A36C6C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6F79B753-77CD-4814-A0F7-19DBE8A36C6C}.Debug|Win32.Build.0 = Debug|Win32
+		{6F79B753-77CD-4814-A0F7-19DBE8A36C6C}.Debug|x64.ActiveCfg = Debug|x64
+		{6F79B753-77CD-4814-A0F7-19DBE8A36C6C}.Debug|x64.Build.0 = Debug|x64
+		{6F79B753-77CD-4814-A0F7-19DBE8A36C6C}.Release|Win32.ActiveCfg = Release|Win32
+		{6F79B753-77CD-4814-A0F7-19DBE8A36C6C}.Release|Win32.Build.0 = Release|Win32
+		{6F79B753-77CD-4814-A0F7-19DBE8A36C6C}.Release|x64.ActiveCfg = Release|x64
+		{6F79B753-77CD-4814-A0F7-19DBE8A36C6C}.Release|x64.Build.0 = Release|x64
+		{BFF2D882-0F6E-41A2-8B2C-7AA79E4F92BA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BFF2D882-0F6E-41A2-8B2C-7AA79E4F92BA}.Debug|Win32.Build.0 = Debug|Win32
+		{BFF2D882-0F6E-41A2-8B2C-7AA79E4F92BA}.Debug|x64.ActiveCfg = Debug|x64
+		{BFF2D882-0F6E-41A2-8B2C-7AA79E4F92BA}.Debug|x64.Build.0 = Debug|x64
+		{BFF2D882-0F6E-41A2-8B2C-7AA79E4F92BA}.Release|Win32.ActiveCfg = Release|Win32
+		{BFF2D882-0F6E-41A2-8B2C-7AA79E4F92BA}.Release|Win32.Build.0 = Release|Win32
+		{BFF2D882-0F6E-41A2-8B2C-7AA79E4F92BA}.Release|x64.ActiveCfg = Release|x64
+		{BFF2D882-0F6E-41A2-8B2C-7AA79E4F92BA}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
